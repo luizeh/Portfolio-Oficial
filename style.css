@@ -290,7 +290,6 @@ h1.digitacao {
   font-weight: 600;
 }
 
-
 /* =====SOBRE===== */
 .sobre {
   display: grid;
@@ -489,15 +488,15 @@ h1.digitacao {
 
 .grade-linguagens {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)); 
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem;
   justify-content: center;
 }
 
 .cartao-js {
   grid-column: 1 / -1;
-  width: 100%;         
-  max-width: 536px;     
+  width: 100%;
+  max-width: 536px;
   margin: 0 auto;
 }
 
@@ -508,6 +507,10 @@ h1.digitacao {
   border-radius: 12px;
   text-align: center;
   transition: all 0.4s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor:pointer;
 }
 
 .cartao-linguagem:hover {
@@ -515,9 +518,10 @@ h1.digitacao {
   border-color: var(--cinza-medio);
 }
 
-.icone-linguagem {
-  font-size: 3.4rem;
-  margin-bottom: 1.2rem;
+.lang-card-icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  object-fit: contain;
 }
 
 .cartao-linguagem h4 {
@@ -572,6 +576,49 @@ h1.digitacao {
   animation-play-state: paused;
 }
 
+/* Tamanho padrão para ícones Font Awesome dentro dos cards */
+.icone-linguagem i {
+  font-size: 4.5rem;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+/* ======QUERO APRENDER====== */
+.cartao-bloqueado {
+  position: relative;
+  background-color: #060b10;
+  border-style: dashed;
+  border-color: var(--cinza-escuro);
+  cursor: pointer;
+}
+
+.cartao-bloqueado:hover {
+  transform: translateY(-4px);
+  border-style: dashed !important;
+  border-color: var(--cinza-medio) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.cartao-bloqueado .icone-linguagem img,
+.cartao-bloqueado .icone-linguagem i {
+  opacity: 0.35;
+  filter: grayscale(1);
+}
+
+.cartao-bloqueado h4 {
+  color: var(--cinza-medio);
+  opacity: 0.55;
+}
+
+.icone-lock {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  color: var(--cinza-medio);
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
 /*======RESPONSIVIDADE====== */
 @media (max-width: 480px) {
   .linguagens {
@@ -602,17 +649,17 @@ h1.digitacao {
   max-width: 100%;
   width: 100%;
 }
- 
+
 #projetos h2 {
   margin-left: 2rem;
   margin-bottom: 0.5rem;
 }
- 
+
 #projetos .subtitulo-secao {
   margin-left: 2rem;
   margin-bottom: 2rem;
 }
- 
+
 .grade-projetos {
   display: flex;
   flex-direction: column;
@@ -621,7 +668,7 @@ h1.digitacao {
   width: 100%;
   padding: 0 1rem;
 }
- 
+
 .cartao-projeto {
   background-color: var(--fundo-escuro-secundario);
   border: 1px solid var(--cor-borda);
@@ -634,13 +681,13 @@ h1.digitacao {
   width: 100%;
   cursor: pointer;
 }
- 
+
 .cartao-projeto:hover {
   transform: scaleX(1.02);
   border-color: var(--texto-claro);
   box-shadow: 0 20px 60px rgba(217, 236, 246, 0.2);
 }
- 
+
 .imagem-projeto {
   width: 100%;
   height: 100%;
@@ -651,18 +698,18 @@ h1.digitacao {
   position: relative;
   overflow: hidden;
 }
- 
+
 .imagem-projeto img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
- 
+
 .cartao-projeto:hover .imagem-projeto img {
   transform: scale(1.1);
 }
- 
+
 .conteudo-projeto {
   padding: 2.5rem;
   display: flex;
@@ -670,19 +717,19 @@ h1.digitacao {
   justify-content: space-between;
   position: relative;
 }
- 
+
 .conteudo-projeto h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   font-weight: 700;
 }
 
-.linkprojeto{
+.linkprojeto {
   color: var(--cinza-claro);
   text-decoration: none;
 }
 
-.linkprojeto:hover{
+.linkprojeto:hover {
   color: (var(--cor-destaque));
   text-decoration: underline;
 }
@@ -693,14 +740,14 @@ h1.digitacao {
   line-height: 1.6;
   font-size: 0.95rem;
 }
- 
+
 .etiquetas-projeto {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
   margin-bottom: 1rem;
 }
- 
+
 .etiqueta {
   display: inline-block;
   background-color: var(--fundo-escuro);
@@ -711,7 +758,7 @@ h1.digitacao {
   font-size: 0.9rem;
   font-weight: 500;
 }
- 
+
 .botao-projeto {
   align-self: flex-end;
   display: inline-flex;
@@ -729,17 +776,16 @@ h1.digitacao {
   text-decoration: none;
   white-space: nowrap;
 }
- 
+
 .botao-projeto:hover {
   transform: translateX(5px);
   box-shadow: 0 8px 20px rgba(217, 236, 246, 0.3);
   background-color: var(--cor-destaque);
 }
- 
+
 .botao-projeto i {
   font-size: 1rem;
 }
- 
 
 /* =====CONTATO===== */
 .contato {
@@ -832,6 +878,10 @@ footer {
 
   .conteudo-heroi p {
     font-size: 1rem;
+  }
+
+  .grade-quero-aprender {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .cartao-projeto {
