@@ -676,7 +676,17 @@ h1.digitacao {
   margin-bottom: 1rem;
   font-weight: 700;
 }
- 
+
+.linkprojeto{
+  color: var(--cinza-claro);
+  text-decoration: none;
+}
+
+.linkprojeto:hover{
+  color: (var(--cor-destaque));
+  text-decoration: underline;
+}
+
 .conteudo-projeto p {
   color: var(--cor-destaque);
   margin-bottom: 1.5rem;
