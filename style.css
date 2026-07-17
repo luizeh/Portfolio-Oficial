@@ -493,7 +493,7 @@ h1.digitacao {
   justify-content: center;
 }
 
-.cartao-js {
+.cartao-largo {
   grid-column: 1 / -1;
   width: 100%;
   max-width: 536px;
